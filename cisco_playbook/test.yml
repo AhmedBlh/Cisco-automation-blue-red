@@ -4,22 +4,20 @@
 
   vars_prompt:
     - name: interface
-      prompt: " write interfaces separated by commas , "
+      prompt: " your interface"
       private: no
-
-#  tasks:
+  
+  tasks:
 #    - set_fact:
 #        interface_list: "{{ interface.split(',') }}"
  
 #    - debug: 
 #        msg: "{{item}}"
-#      loop: "{{interface_list}}"
-#     
+#      loop: "{{interface_list}}" 
     - name: test task1
-      hosts: switch
       ios_config:
          lines:
          - description bbb
-         parents: int e0/1
+         parents: "{{interface}}"
 #         parents: "{{item}}"
 #      loop: "{{interface_list}}"
