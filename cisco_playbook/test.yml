@@ -1,11 +1,7 @@
 - name: test
-  hosts: all
+  hosts: switch
   gather_facts: no
 
-#  vars_prompt:
-#    - name: interface
-#      prompt: " your interface"
-#      private: no
   
   tasks:
 #    - set_fact:
