@@ -2,10 +2,10 @@
   hosts: all
   gather_facts: no
 
-  vars_prompt:
-    - name: interface
-      prompt: " your interface"
-      private: no
+#  vars_prompt:
+#    - name: interface
+#      prompt: " your interface"
+#      private: no
   
   tasks:
 #    - set_fact:
