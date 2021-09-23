@@ -1,0 +1,23 @@
+- name: delete registry on Windows
+  hosts: windows
+  gather_facts: no
+  tasks:
+
+    - name: delete entry from registry
+      win_regedit:
+        path: "{{reg_path}}"
+        name: "{{reg_name}}"
+        state: absent
+#
+# takes less time
+#     - name: 
+#       win_shell: reg delete {{reg_path}} /v {{reg_name}} /f
+#       register: a
+#     - debug:
+#         var:  a.stdout 
+#
+    - name: delete the malicious file
+      win_file:
+        path: "{{file_path}}"
+        state: absent 
+

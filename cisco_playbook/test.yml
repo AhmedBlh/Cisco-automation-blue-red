@@ -1,0 +1,25 @@
+- name: test
+  hosts: all
+  gather_facts: no
+
+  vars_prompt:
+    - name: interface
+      prompt: " write interfaces separated by commas , "
+      private: no
+
+#  tasks:
+#    - set_fact:
+#        interface_list: "{{ interface.split(',') }}"
+ 
+#    - debug: 
+#        msg: "{{item}}"
+#      loop: "{{interface_list}}"
+#     
+    - name: test task1
+      hosts: switch
+      ios_config:
+         lines:
+         - description bbb
+         parents: int e0/1
+#         parents: "{{item}}"
+#      loop: "{{interface_list}}"

@@ -1,0 +1,25 @@
+[switch]
+100.0.0.10 ansible_user=sw
+#sw_interface= int e0/1 
+
+[router]
+2.2.2.2 ansible_user=R2 
+3.3.3.3 ansible_user=R3 
+
+#10.10.10.10 ansible_user=R10
+
+[ios:children]
+switch
+router
+
+[ios:vars]
+ansible_password=cisco
+ansible_connection=network_cli
+ansible_network_os=ios
+ansible_become=yes
+ansible_become_method=enable
+ansible_become_password=cisco
+
+
+
+#interface= int e2/2

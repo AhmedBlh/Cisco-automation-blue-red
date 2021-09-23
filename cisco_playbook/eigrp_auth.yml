@@ -1,0 +1,23 @@
+- name: EIGRP 
+  hosts: router
+  gather_facts: no
+  tasks:
+     - name: Key-chain creation 
+       ios_config:
+         lines:
+         - key chain mychain
+         - key 1
+         - key-string cisco
+         after: no key chain mychain        
+     - name: Authentication
+       ios_config:
+         lines:
+         - ip auth mode eig 1 md5
+         - ip auth key-chain eigrp 1 mychain  
+         after: 
+         - no ip auth mod eig 1 md5
+         - no ip auth key-ch eig 1 mychain
+         parents:
+         - interface f0/0  
+         - int f1/0
+        

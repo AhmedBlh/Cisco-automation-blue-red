@@ -1,0 +1,30 @@
+- name: delete email on Linux
+  hosts: kali
+  gather_facts: no
+  tasks:
+    - name: copy file to linux machines
+      copy:
+        src: "{{ kali_path }}"
+        dest: "{{ kali_path }}"
+        force: no
+    - name: execute 
+      command: python3 "{{ kali_path }}"
+      register: v
+    - debug: 
+        msg:
+          - "log from : {{ inventory_hostname }} >>  {{ v.stdout }}"
+- name: delete email on Windows
+  hosts: windows
+  gather_facts: no
+  tasks:
+    - name: copy file to windows machines
+      win_copy:
+        src: "{{ kali_path }}"
+        dest: "{{ win_path }}"
+        force: no
+    - name: execute
+      win_shell: python "{{ win_path }}"
+      register: v
+    - debug: 
+        msg:
+            - "log from : {{ inventory_hostname }} >>  {{ v.stdout | trim }}"

@@ -1,0 +1,10 @@
+[windows]
+192.168.56.25
+
+[windows:vars]
+ansible_user=ahmed
+ansible_password=b
+ansible_shell_type=powershell
+reg_path= HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+reg_name= update
+file_path=C:\Users\BakiTech HP\AppData\Roaming\sido.py
