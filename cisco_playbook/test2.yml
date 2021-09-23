@@ -1,0 +1,11 @@
+- name: test
+  hosts: all
+  gather_facts: no
+
+    
+  tasks: 
+    - name: test task1
+      ios_config:
+         lines:
+         - description bbb
+         parents: interface e0/1
