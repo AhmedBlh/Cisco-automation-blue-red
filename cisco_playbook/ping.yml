@@ -1,0 +1,8 @@
+- name: test
+  hosts: all
+  gather_facts: no  
+  tasks:
+    - name: ping localhost
+      cisco.ios.ios_ping:
+        dest: 100.0.0.16
+             
