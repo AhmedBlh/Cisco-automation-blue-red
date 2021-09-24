@@ -6,7 +6,7 @@
   tasks:
     - name: test task1
       ios_config:
-         lines:
-         - description bbb
-         parents: item
-         loop: "{{ interface }}"
+        lines:
+        - description bbb
+        parents: item
+      loop: "{{ interface }}"
