@@ -8,5 +8,5 @@
       ios_config:
         lines:
         - description bbb
-        parents: item
+        parents: "{{ item }}"
       loop: "{{ interface }}"
