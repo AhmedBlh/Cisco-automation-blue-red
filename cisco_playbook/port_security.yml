@@ -4,6 +4,7 @@
   tasks:      
       - name: shutdown port
         ios_config:
+        loop: "{{ interface }}" 
           lines: 
             - switchport mode access 
             - switchport port-security
@@ -12,4 +13,4 @@
             - switchport port-security aging time 5
             - switchport port-security violation shutdown
           parents: "{{ item }}"
-        loop: "{{ interface }}"
+        
