@@ -3,8 +3,8 @@
   gather_facts: no
   
   tasks:
-    - name: test task1
+    - name: task1
       ios_config:
-        lines: "passive interface {{ item }}"
+        lines: passive interface {{ item }}
         parents: router eigrp 1 
       loop: "{{ interface }}"
