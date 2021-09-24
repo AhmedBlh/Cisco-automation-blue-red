@@ -1,9 +1,10 @@
 - name: DTP configuration 
-  hosts: "{{switch}}"
+  hosts: "{{ switch }}"
   gather_facts: no
   tasks:
      - name: access port 
        ios_config:
          lines:
          - switchport mode acc
-         parents: "{{ interface }}"
+         parents: "{{ item }}"
+       loop: "{{ interface }}"
