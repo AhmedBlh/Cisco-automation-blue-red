@@ -1,5 +1,5 @@
 - name: Port-security config
-  hosts: "{{switch}}"
+  hosts: "{{ switch }}"
   gather_facts: no
   tasks:      
       - name: shutdown port
@@ -11,4 +11,5 @@
             - switchport port-security aging type inactivity
             - switchport port-security aging time 5
             - switchport port-security violation shutdown
-          parents: "{{interface}}"
+          parents: "{{ item }}"
+        loop: "{{ interface }}"
