@@ -2,7 +2,7 @@
   hosts: "{{ switch }}"
   gather_facts: no
   tasks:      
-      - name: shutdown port
+      - name: add interface security measures 
         ios_config: 
           lines: 
             - switchport mode access 
