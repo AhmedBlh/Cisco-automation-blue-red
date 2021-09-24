@@ -4,16 +4,9 @@
 
   
   tasks:
-#    - set_fact:
-#        interface_list: "{{ interface.split(',') }}"
- 
-#    - debug: 
-#        msg: "{{item}}"
-#      loop: "{{interface_list}}" 
     - name: test task1
       ios_config:
          lines:
          - description bbb
-         parents: "{{interface}}"
-#         parents: "{{item}}"
-#      loop: "{{interface_list}}"
+         parents: item
+         loop: "{{ interface }}"
