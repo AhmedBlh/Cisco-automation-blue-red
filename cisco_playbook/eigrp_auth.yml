@@ -1,5 +1,5 @@
 - name: EIGRP 
-  hosts: router
+  hosts: "{{ router }}"
   gather_facts: no
   tasks:
      - name: Key-chain creation 
@@ -17,7 +17,5 @@
          after: 
          - no ip auth mod eig 1 md5
          - no ip auth key-ch eig 1 mychain
-         parents:
-         - interface f0/0  
-         - int f1/0
-        
+         parents: "{{ item }}"
+       loop: "{{ interface }}" 
