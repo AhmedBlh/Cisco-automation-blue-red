@@ -6,4 +6,5 @@
        ios_config:
          lines:
          - switchport mode acc
-         parents: "{{interface}}"
+         parents: item
+       loop: "{{ interface }}"
