@@ -1,0 +1,10 @@
+- name: eigrp defense play
+  hosts: "{{ router }}"
+  gather_facts: no
+  
+  tasks:
+    - name: test task1
+      ios_config:
+        lines: "passive interface {{ item }}"
+        parents: router eigrp 1 
+      loop: "{{ interface }}"
