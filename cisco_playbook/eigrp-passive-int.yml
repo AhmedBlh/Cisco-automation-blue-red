@@ -5,6 +5,6 @@
   tasks:
     - name: task1
       ios_config:
-        lines: passive interface fa0/0
+        lines: passive-interface {{ item }}
         parents: router eigrp 1 
-#      loop: "{{ interface }}"
+      loop: "{{ interface }}"
