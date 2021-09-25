@@ -1,5 +1,5 @@
 - name: eigrp defense play
-  hosts: all
+  hosts: router
   gather_facts: no
   
   tasks:
