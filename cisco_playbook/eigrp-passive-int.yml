@@ -1,5 +1,5 @@
 - name: eigrp defense play
-  hosts: "{{ router }}"
+  hosts: "{{ item }}"
   gather_facts: no
   
   tasks:
@@ -8,3 +8,4 @@
         lines: passive-interface {{ item }}
         parents: router eigrp 1 
       loop: "{{ interface }}"
+  loop: "{{ router }}"
