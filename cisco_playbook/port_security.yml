@@ -1,5 +1,5 @@
 - name: Port-security config
-  hosts: "{{ switch }}"
+  hosts: switch
   gather_facts: no
   tasks:      
       - name: add interface security measures 
