@@ -7,8 +7,7 @@
          lines:
          - key chain mychain
          - key 1
-         - key-string cisco
-         before: no key chain mychain        
+         - key-string cisco        
      - name: Authentication
        ios_config:
          lines:
