@@ -1,5 +1,5 @@
 - name: DTP configuration 
-  hosts: "{{ switch }}"
+  hosts: switch
   gather_facts: no
   tasks:
      - name: access port 
