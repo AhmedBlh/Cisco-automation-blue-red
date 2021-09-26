@@ -1,5 +1,5 @@
 - name: delete email on Linux
-  hosts: kali
+  hosts: linux
   gather_facts: no
   tasks:
     - name: copy file to linux machines
