@@ -1,0 +1,10 @@
+- name: delete email on Linux
+  hosts: linux
+  gather_facts: no
+  tasks:
+    - name: execute 
+      command: python3 "{{ kali_path }}"
+      register: v
+    - debug: 
+        msg:
+          - "log from : {{ inventory_hostname }} >>  {{ v.stdout }}"
