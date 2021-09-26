@@ -8,13 +8,13 @@
          - key chain mychain
          - key 1
          - key-string cisco
-         after: no key chain mychain        
+         before: no key chain mychain        
      - name: Authentication
        ios_config:
          lines:
          - ip auth mode eig 1 md5
          - ip auth key-chain eigrp 1 mychain  
-         after: 
+         before: 
          - no ip auth mod eig 1 md5
          - no ip auth key-ch eig 1 mychain
          parents: "{{ item }}"
