@@ -2,16 +2,12 @@
   hosts: router
   gather_facts: no
   tasks:
-     - name: Key-chain creation 
-       ios_config:
-         lines:
-         - key chain mychain
-     - name: mychain configuration
+     - name: key chain configuration
        ios_config:
          lines:
          - key 1
          - key-string cisco
-         parents: key chain mychain
+         before: key chain mychain
      - name: Authentication
        ios_config:
          lines:
