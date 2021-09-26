@@ -14,8 +14,5 @@
          lines:
          - ip auth mode eig 1 md5
          - ip auth key-chain eigrp 1 mychain  
-         before: 
-         - no ip auth mod eig 1 md5
-         - no ip auth key-ch eig 1 mychain
          parents: "{{ item }}"
        loop: "{{ interface }}" 
