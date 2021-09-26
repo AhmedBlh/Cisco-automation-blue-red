@@ -1,5 +1,5 @@
 - name: STP root guard 
-  hosts: "{{ switch }}"
+  hosts: switch
   gather_facts: no 
   tasks: 
      - name: root guard configuration
