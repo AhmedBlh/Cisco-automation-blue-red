@@ -6,8 +6,12 @@
        ios_config:
          lines:
          - key chain mychain
+     - name: mychain configuration
+       ios_config:
+         lines:
          - key 1
-         - key-string cisco        
+         - key-string cisco
+         parents: key chain mychain
      - name: Authentication
        ios_config:
          lines:
